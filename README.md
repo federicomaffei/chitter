@@ -10,7 +10,7 @@ features:
 
 notes:
 
-- Makers sign up to chitter with their email, password, name and a user name (i.e. stephen@makersacademy.com, s3cr3t, Stephen Lloyd, Stephen_lloyd)
+- Makers sign up to chitter with their email, password, name and a user name (i.e. mail@makersacademy.com, s3cr3t, Stephen Lloyd, Stephen_lloyd)
 - The username and email are unique
 - Peeps (posts to chitter) have the name of the maker and their user handle
 - Use bcrypt to secure the passwords
