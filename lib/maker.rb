@@ -1,11 +1,10 @@
 require 'bcrypt'
-require 'peep'
 
 class Maker
 
 	include DataMapper::Resource
 
-		has n, :peeps, :through => Resource
+	has n, :peeps, :through => Resource
 
 	property :id, Serial
 	property :email, String, :unique => true

@@ -9,6 +9,4 @@ class Peep
 	property :posted_by, String
 	property :posted_at, Time
 
-
-
 end
