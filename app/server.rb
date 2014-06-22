@@ -73,3 +73,9 @@ post '/sessions' do
 		erb :'sessions/new'
 	end
 end
+
+delete '/sessions' do
+	session[:maker_id] = nil
+	flash[:notice] = ['Thanks for using chitter!']
+	redirect to '/'
+end

@@ -3,6 +3,7 @@ ENV["RACK_ENV"] = 'test'
 require './app/server'
 require 'capybara/rspec'
 require 'database_cleaner'
+require 'features/helpers/session'
 
 Capybara.app = Sinatra::Application
 
@@ -27,4 +28,8 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
+end
+
+RSpec.configure do |c|
+  c.include SessionHelpers
 end
