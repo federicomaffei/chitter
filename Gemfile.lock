@@ -89,7 +89,7 @@ GEM
       rspec-support (~> 3.0.0)
     rspec-mocks (3.0.2)
       rspec-support (~> 3.0.0)
-    rspec-support (3.0.1)
+    rspec-support (3.0.2)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)

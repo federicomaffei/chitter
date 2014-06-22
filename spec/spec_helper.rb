@@ -1,9 +1,10 @@
-require 'capybara/rspec'
-require 'database_cleaner'
-
 ENV["RACK_ENV"] = 'test'
 
 require './app/server'
+require 'capybara/rspec'
+require 'database_cleaner'
+
+Capybara.app = Sinatra::Application
 
 RSpec.configure do |config|
   config.run_all_when_everything_filtered = true

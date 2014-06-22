@@ -1,14 +1,16 @@
 source 'https://rubygems.org'
 
+ruby '2.1.1'
+
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
-gem 'database_cleaner'
-gem 'capybara'
 gem 'sinatra'
 gem 'bcrypt'
 gem 'rack-flash3'
 gem "launchy"
+gem 'capybara'
 
 group :development, :test do
 	gem "rspec"
+	gem 'database_cleaner'
 end

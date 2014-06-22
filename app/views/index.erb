@@ -1,0 +1,22 @@
+<html>
+<head></head>
+<body>
+<div id = 'maker_options'
+	<form action = "/sign_up" method='post'>
+		<input type ="submit" value="Sign Up!">
+	</form>
+</div>
+<br>
+<div id = 'new_peep'>
+	<form action="/new_peep" method="post">
+		Enter a new peep! <input type="text" name="body">
+		<input type="submit" value="Post Message!">
+	</form>
+</div>
+<ul>
+	<% @peeps.each do |peep| %>
+	<li><%= peep.posted_by%> wrote: <%= peep.body %> at <%=peep.posted_at%></a></li>
+	<% end %>
+</ul>
+</body>
+</html>

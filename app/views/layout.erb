@@ -1,0 +1,7 @@
+<body>
+	<h1>.this is chitter.</h1>
+	<% if current_maker %>
+	Welcome, <%= current_maker.username %>
+	<% end %>
+	<%= yield %>
+</body>
