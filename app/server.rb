@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'rack-flash'
 require 'data_mapper'
 
 env = ENV["RACK_ENV"] || "development"
@@ -14,6 +15,7 @@ DataMapper.auto_upgrade!
 
 enable :sessions
 set :session_secret, 'super secret'
+use Rack::Flash
 
 def current_maker
 	@current_maker ||= Maker.get(session[:maker_id]) if session[:maker_id]
@@ -25,7 +27,12 @@ get '/' do
 end
 
 get '/makers/new' do
+	@maker = Maker.new
 	erb :"/makers/new"
+end
+
+get '/sessions/new' do
+	erb :'sessions/new'
 end
 
 post '/new_peep' do
@@ -44,7 +51,25 @@ post '/makers' do
 	password_confirmation = params[:password_confirmation]
 	username = params[:username]
 	name = params[:name]
-	maker = Maker.create(:email =>email, :password => password, :password_confirmation => password_confirmation, :username => username, :name => name)
-	session[:maker_id] =maker.id
-	redirect('/')
+	@maker = Maker.new(:email =>email, :password => password, :password_confirmation => password_confirmation, :username => username, :name => name)
+	if @maker.save
+		session[:maker_id] = @maker.id
+		redirect to('/')
+	else
+		flash.now[:errors] = @maker.errors.full_messages
+		erb :'/makers/new' 
+	end
+end
+
+post '/sessions' do
+	email = params[:email]
+	password = params[:password]
+	maker = Maker.authenticate(email, password)
+	if maker
+		session[:maker_id] = maker.id
+		redirect to('/')
+	else
+		flash[:errors] = ['Email or password is incorrect']
+		erb :'sessions/new'
+	end
 end

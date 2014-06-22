@@ -1,7 +1,18 @@
+<html>
+<head></head>
 <body>
 	<h1>.this is chitter.</h1>
 	<% if current_maker %>
 	Welcome, <%= current_maker.username %>
 	<% end %>
+	<% if flash[:errors] && !flash[:errors].empty? %>
+	Sorry, there were the following problems with the form. 
+	<ul id="errors">
+		<% flash[:errors].each do |error| %>
+		<li><%= error %></li>
+		<% end %>
+	</ul>
+	<% end %>
 	<%= yield %>
 </body>
+</html>
