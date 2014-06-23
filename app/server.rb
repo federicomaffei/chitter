@@ -45,6 +45,10 @@ post '/sign_up' do
 	redirect to '/makers/new'
 end
 
+post '/sign_in' do
+	redirect to 'sessions/new'
+end
+
 post '/makers' do
 	email = params[:email]
 	password = params[:password]
