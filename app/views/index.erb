@@ -12,7 +12,7 @@
 <br>
 <ul>
 	<% @peeps.each do |peep| %>
-	<li><%= peep.posted_by%> wrote: <%= peep.body %> at <%=peep.posted_at%></a></li>
+	<li><%= peep.posted_by %> wrote: <%= peep.body %> at <%=peep.posted_on%></a></li>
 	<% end %>
 </ul>
 </body>

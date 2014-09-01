@@ -9,6 +9,6 @@ class Peep
 	property :id, Serial
 	property :body, Text
 	property :posted_by, String
-	property :posted_at, Time
+	property :posted_on, Date
 
 end

@@ -1,16 +1,12 @@
 require 'sinatra'
 require 'rack-flash'
 require 'data_mapper'
-
-env = ENV["RACK_ENV"] || "development"
-
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/chitter_#{env}")
-
 require './lib/maker'
 require './lib/peep'
 
+env = ENV["RACK_ENV"] || "development"
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/chitter_#{env}")
 DataMapper.finalize
-
 DataMapper.auto_upgrade!
 
 enable :sessions
@@ -37,7 +33,7 @@ end
 
 post '/new_peep' do
 	body = params[:body]
-	peep = Peep.create(:body => body)
+	peep = Peep.create(:body => body, :posted_by => current_maker.username, :posted_on => Date.today.to_s)
 	redirect to('/')
 end
 
