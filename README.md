@@ -26,5 +26,7 @@ Here's the challenge:
 >Bonus:
 >* If you have time you can implement the following:
 >* In order to start a conversation as a maker I want to reply to a peep from another maker.
-      Or / and:
+      
+      >Or / and:
+
 >* Work on the css to make it look good (we all like beautiful things).
