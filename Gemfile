@@ -9,6 +9,8 @@ gem 'bcrypt'
 gem 'rack-flash3'
 gem "launchy"
 gem 'capybara'
+require 'dm-timestamps'
+
 
 group :development, :test do
 	gem "rspec"

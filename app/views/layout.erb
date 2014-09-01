@@ -1,5 +1,8 @@
 <html>
-<head></head>
+<head>
+	<title>.chitter.</title>
+	<link rel="stylesheet" type="text/css" href="/css/application.css"> 
+</head>
 <body>
 	<h1>.this is chitter.</h1>
 	<% if current_maker %>
@@ -8,6 +11,12 @@
 		<input type="hidden" name="_method" value="delete">
 		<input type="submit" value="Sign out">
 	</form>
+	<div id = 'new_peep'>
+		<form action="/new_peep" method="post">
+			Enter a new peep! <input type="text" name="body">
+			<input type="submit" value="Post Message!">
+		</form>
+	</div>
 	<% end %>
 	<% if flash[:errors] && !flash[:errors].empty? %>
 	Sorry, there were the following problems with the form. 

@@ -17,4 +17,11 @@ module SessionHelpers
 		click_button 'Sign in'
 	end
 
+	def add_peep(body)
+		within('#new_peep') do
+			fill_in 'body', :with => body
+			click_button 'Post Message!'
+		end
+	end
+
 end
