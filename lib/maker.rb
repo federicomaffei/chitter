@@ -9,7 +9,7 @@ class Maker
 	property :id, Serial
 	property :email, String, :unique => true, :message => 'Sorry, this email is already taken.'
 	property :password_digest, Text
-	property :username, String
+	property :username, String, :unique => true, :message => "Sorry, this username is already taken."
 	property :name, String
 
 	attr_reader :password

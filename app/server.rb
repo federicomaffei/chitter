@@ -12,6 +12,7 @@ DataMapper.auto_upgrade!
 enable :sessions
 set :session_secret, 'super secret'
 use Rack::Flash
+enable :static
 
 def current_maker
 	@current_maker ||= Maker.get(session[:maker_id]) if session[:maker_id]
@@ -76,6 +77,6 @@ end
 
 delete '/sessions' do
 	session[:maker_id] = nil
-	flash[:notice] = ['Thanks for using chitter!']
+	flash[:notice] = 'Thanks for using chitter!'
 	redirect to '/'
 end

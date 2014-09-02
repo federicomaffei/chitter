@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 feature 'User not logged can browse the list of messages' do
-
 	before(:each) { 
 		Peep.create(:body => 'TEST MESSAGE', 
 					:posted_by => 'test', 

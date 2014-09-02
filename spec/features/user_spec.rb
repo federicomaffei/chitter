@@ -2,7 +2,6 @@ require 'spec_helper'
 require './lib/maker'
 
 describe Maker do
-
 	context 'db model interaction' do
 		it 'has no makers in DB at first' do
 			expect(Maker.count).to eq (0)

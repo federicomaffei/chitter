@@ -1,15 +1,6 @@
 <html>
 <head></head>
 <body>
-<div id = 'maker_options'>
-	<form action = "/sign_up" method='post'>
-		<input type ="submit" value="Sign Up!">
-	</form>
-	<form action = "/sign_in" method='post'>
-		<input type ="submit" value="Sign In!">
-	</form>
-</div>
-<br>
 <ul>
 	<% @peeps.each do |peep| %>
 	<li><%= peep.posted_by %> wrote: <%= peep.body %> at <%=peep.posted_on%></a></li>
