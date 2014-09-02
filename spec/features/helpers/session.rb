@@ -1,5 +1,4 @@
 module SessionHelpers
-
 	def sign_up(email ='test@test.com', password = 'pass', password_confirmation = 'pass', username = 'user', name = 'name')
 		visit '/makers/new'
 		fill_in :email, :with => email
@@ -18,10 +17,8 @@ module SessionHelpers
 	end
 
 	def add_peep(body)
-		within('#new_peep') do
-			fill_in 'body', :with => body
-			click_button 'Post Message!'
-		end
+		visit '/'
+		fill_in 'body', :with => body
+		click_button 'Post Message!'
 	end
-
 end

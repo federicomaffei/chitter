@@ -7,7 +7,6 @@ feature 'A message can be added' do
 	end
 
 	scenario 'from the homepage' do
-		visit '/'
 		sign_in('test@test.com', 'pass')
 		add_peep('TEST MESSAGE')
 		expect(Peep.count).to eq 1
@@ -23,7 +22,6 @@ feature 'A message shows' do
 	end
 
 	scenario 'the name of the poster' do
-		visit '/'
 		sign_in('test@test.com', 'pass')
 		add_peep('TEST MESSAGE')
 		peep = Peep.first
@@ -31,7 +29,6 @@ feature 'A message shows' do
 	end
 
 	scenario 'the date of the posting' do
-		visit '/'
 		sign_in('test@test.com', 'pass')
 		add_peep('TEST MESSAGE')
 		peep = Peep.first
