@@ -1,11 +1,11 @@
 <html>
 <head></head>
 <body>
-<ul>
-	<li class="title-wall">peeps timeline:</li>
-	<% @peeps.each do |peep| %>
-	<li class="post-wall"><%= peep.posted_by %> wrote: <%= peep.body %> at <%=peep.posted_on%></a></li>
-	<% end %>
-</ul>
+	<ul>
+		<li class="title-wall">peeps timeline:</li>
+		<% @peeps.each do |peep| %>
+		<li class="post-wall"><%= peep.posted_by %> wrote: <%= peep.body %> at <%=peep.posted_on%></a></li>
+		<% end %>
+	</ul>
 </body>
 </html>
