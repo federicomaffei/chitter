@@ -11,7 +11,6 @@ h1 {
 header .header-form {
 	vertical-align: bottom;
 	display: inline;
-
 }
 
 header {
@@ -48,3 +47,16 @@ header .right-header-nav {
  
   .rightColumn { position: absolute; top: 0; right: 0; width: 18.75em; }
 }
+
+.title-wall {
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+
+.post-wall {
+	margin-bottom: 15px;
+}
+
+
+

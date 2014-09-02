@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="/css/application.css">
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<div id='wrapper'>
@@ -51,25 +51,25 @@
 				Sorry, there were the following problems with the form. 
 				<ul id="errors">
 					<% flash[:errors].each do |error| %>
-					<li><%= error %></li>
+					<li class="post-wall"><%= error %></li>
 					<% end %>
 				</ul>
 				<% end %>
 				<% if flash[:notice] %>
 				<div id="notice">
-					<%= flash[:notice] %>
+					<p class="post-wall"><%= flash[:notice] %></p>
 				</div>
 				<% end %>
 				<%= yield %>
 			</div>
 			<div class="rightColumn">
 				<% if current_maker %>
-				<form action="/new_peep" method="post">
+				<form action="/new_peep" class='new-peep' method="post">
 					Enter a new peep! <input type="text" name="body">
 					<input type="submit" value="Post Message!">
 				</form>
 				<% else %>
-				Please sign in to peep to another maker!
+				Please sign in to peep to the wall!
 				<% end %>
 			</div>
 		</div>
