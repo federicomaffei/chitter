@@ -7,21 +7,27 @@ h1 {
 	font-size: 30px;
 }
 
+header .header-form {
+	vertical-align: bottom;
+	display: inline;
+
+}
+
 header {
 	height: 60px;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 
 header .header-element {
 	align-self: flex-end;
 }
 
-header .logo {
-	align-self: flex-end;
+header .right-header-nav {
+	display: inline;
 }
 
 #wrapper {
-	width: 1100px;
+	width: 800px;
 	margin: 0 auto;
 }
