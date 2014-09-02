@@ -63,10 +63,14 @@
 				<%= yield %>
 			</div>
 			<div class="rightColumn">
+				<% if current_maker %>
 				<form action="/new_peep" method="post">
 					Enter a new peep! <input type="text" name="body">
 					<input type="submit" value="Post Message!">
 				</form>
+				<% else %>
+				Please sign in to peep to another maker!
+				<% end %>
 			</div>
 		</div>
 	</div>

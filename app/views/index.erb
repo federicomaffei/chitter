@@ -2,6 +2,7 @@
 <head></head>
 <body>
 <ul>
+	<li class="title-wall">peeps timeline:</li>
 	<% @peeps.each do |peep| %>
 	<li><%= peep.posted_by %> wrote: <%= peep.body %> at <%=peep.posted_on%></a></li>
 	<% end %>
