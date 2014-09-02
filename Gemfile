@@ -9,6 +9,7 @@ gem "launchy"
 gem 'capybara'
 gem 'dm-timestamps'
 gem 'database_cleaner'
+gem 'sprockets'
 
 group :development, :test do
 	gem "rspec"

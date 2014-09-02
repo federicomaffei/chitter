@@ -12,6 +12,8 @@ DataMapper.auto_upgrade!
 enable :sessions
 set :session_secret, 'super secret'
 use Rack::Flash
+set :public_folder, 'assets'
+set :root, File.dirname(__FILE__)
 enable :static
 
 def current_maker
