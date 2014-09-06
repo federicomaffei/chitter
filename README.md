@@ -32,3 +32,5 @@ Here's the challenge:
 >* Work on the css to make it look good (we all like beautiful things).
 
 My solution has been deployed to Heroku at the address: [http://cheetter.herokuapp.com/](http://cheetter.herokuapp.com/).
+
+![CHITTER](https://dl.dropboxusercontent.com/u/9315601/cheetter.png)
